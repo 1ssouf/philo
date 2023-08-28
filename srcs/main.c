@@ -6,7 +6,7 @@
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 17:40:41 by ialousse          #+#    #+#             */
-/*   Updated: 2023/08/26 18:13:54 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/08/28 23:27:57 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	freeall(t_info *data)
 	while (++i < data->nbr_philo)
 	{
 		pthread_mutex_destroy(&data->philo[i].fork_left);
-		pthread_mutex_destroy(&data->philo[i].fork_right);
+		pthread_mutex_destroy(data->philo[i].fork_right);
 	}
 	free(data->philo);
 	pthread_mutex_destroy(&data->print);

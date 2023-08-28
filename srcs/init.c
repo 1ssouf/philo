@@ -6,7 +6,7 @@
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 17:56:07 by ialousse          #+#    #+#             */
-/*   Updated: 2023/08/27 22:06:20 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/08/28 23:25:02 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,9 @@ int	philo_init(t_info *data)
 	}
 	i = -1;
 	while (++i < data->nbr_philo)
-	{
 		if (pthread_join(data->philo[i].thread, NULL) != 0)
 			return (-1);
-		retun (0);
-	}
+	return (0);
 }
 
 int	var_init(t_info *data, char **av)

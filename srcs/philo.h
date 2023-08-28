@@ -6,7 +6,7 @@
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:00:33 by ialousse          #+#    #+#             */
-/*   Updated: 2023/08/26 18:18:17 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/08/28 23:21:23 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,27 @@ typedef struct l_info
 }	t_info;
 
 /*init.c*/
-int		var_init(t_info *data, char **av);
+int			var_init(t_info *data, char **av);
+int			philo_init(t_info *data);
 
 /*libft.c*/
-int		ft_atoi(const char *str);
-int		ft_isdigit(int character);
-int		ft_check_nbr(char **str);
+int			ft_atoi(const char *str);
+int			ft_isdigit(int character);
+int			ft_check_nbr(char **str);
 
 /*main.c*/
-void	freeall(t_info *data);
+void		freeall(t_info *data);
 
 /*philo.c*/
+void		*check_death(void *phi);
+void		*philo_life(void *phi);
+void		philo_eat(t_philo *philo);
+void		take_fork(t_philo *philo);
+
+/*utils.c*/
+void		ft_usleep(int s);
+int			is_dead(t_philo *philo, int nb);
+long long	timestamp(void);
+void		print(t_philo *philo, char *str);
 
 #endif
